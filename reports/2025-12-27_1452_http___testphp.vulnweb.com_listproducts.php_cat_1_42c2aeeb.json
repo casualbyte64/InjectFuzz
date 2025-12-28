@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "tool": "SignalFuzz Pro",
+    "version": "1.0.0",
+    "session_id": "42c2aeeb",
+    "timestamp_start": "2025-12-27T14:52:52.251747+00:00",
+    "target": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+    "configuration": {
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+        "parameter": "cat",
+        "method": "GET",
+        "data": null,
+        "payloads": "payload/fuzz.txt",
+        "threads": 10,
+        "timeout": 10.0,
+        "proxy": null,
+        "mutate": false
+    },
+    "system": {
+        "platform": "win32",
+        "python": "3.15.0a3"
+    }
+},
+  "timeline": [
+{"event": "scan_started", "time": "2025-12-27T14:52:52.253149+00:00", "data": {"timestamp": 1766847172.2531445}}
+  ],
+  "findings": [
+
+  ]
+}

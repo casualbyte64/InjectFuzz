@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "tool": "SignalFuzz Pro",
+    "version": "1.0.0",
+    "session_id": "30745083",
+    "timestamp_start": "2025-12-27T14:57:35.026690+00:00",
+    "target": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+    "configuration": {
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+        "parameter": "cat",
+        "method": "GET",
+        "data": null,
+        "payloads": "payload/fuzz.txt",
+        "threads": 10,
+        "timeout": 10.0,
+        "proxy": null,
+        "mutate": false
+    },
+    "system": {
+        "platform": "win32",
+        "python": "3.15.0a3"
+    }
+},
+  "timeline": [
+{"event": "scan_started", "time": "2025-12-27T14:57:35.028102+00:00", "data": {"timestamp": 1766847455.0280905}}
+  ],
+  "findings": [
+    {"payload": "' OR '1'='1", "classification": "anomaly", "analysis": {"classification": "ANOMALY", "reason": "Size Deviation (5736 bytes)", "diff_score": 0.4, "response": {"status": 200, "length": 2144, "time": 0.388}}},
+    {"payload": "<script>alert(1)</script>", "classification": "possible_injection", "analysis": {"classification": "INTERESTING", "reason": "Payload Reflected, Size Deviation (5715 bytes)", "diff_score": 1.2000000000000002, "response": {"status": 200, "length": 2165, "time": 0.8971}}},
+    {"payload": "{{7*7}}", "classification": "anomaly", "analysis": {"classification": "ANOMALY", "reason": "Size Deviation (5735 bytes)", "diff_score": 0.4, "response": {"status": 200, "length": 2145, "time": 0.8942}}}
+  ],
+  "summary": {
+    "scan_duration_seconds": 3.39,
+    "total_findings": 3,
+    "timestamp_end": "2025-12-27T14:57:38.415262+00:00",
+    "status": "completed"
+}
+}
